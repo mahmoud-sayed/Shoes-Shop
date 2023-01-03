@@ -5,7 +5,7 @@ import colors from './../../GeneralImportantThings/colors';
 const LoginScreen = () => {
   return (
     <Box flex={1} bg={colors.black}>
-      <Text color={colors.}>LoginScreen</Text>
+      <Text color={colors.white}>LoginScreen</Text>
     </Box>
   );
 };
