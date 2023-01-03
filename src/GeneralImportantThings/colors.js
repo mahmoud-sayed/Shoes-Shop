@@ -14,4 +14,4 @@ const Colors = {
   paypal: '#FFB730'
 };
 
-export default colors;
+export default Colors;
