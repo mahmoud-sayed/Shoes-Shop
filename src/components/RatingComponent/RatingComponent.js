@@ -3,8 +3,8 @@ import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import Colors from './../../GeneralImportantThings/colors';
 
-const RatingComponent = ({ value, text }) => {
-  const size = 8;
+const RatingComponent = ({ value, text, size = 8 }) => {
+
   const color = Colors.orange;
   return (
     <HStack space={0.4} mt={1} alignItems='center'>
