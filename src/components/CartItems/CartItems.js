@@ -14,7 +14,7 @@ const Swiper = () => {
       previewOpenValue={-40}
       previewRowKey={0}
       previewOpenDelay={3000}
-      data={Products.slice(0, 2)}
+      data={Products}
       renderHiddenItem={renderHiddenItem}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
@@ -43,7 +43,7 @@ const renderItem = (data) => {
             <Text bold color={Colors.lightBlack}>${data.item.price}</Text>
           </VStack>
           <Center>
-            <Button bg={Colors.main} _pressed={{ bg: Colors.deepGray }} color={Colors.white}>5</Button>
+            <Button bg={Colors.main} _pressed={{ bg: Colors.main }} color={Colors.white}>5</Button>
           </Center>
         </HStack>
       </Box>

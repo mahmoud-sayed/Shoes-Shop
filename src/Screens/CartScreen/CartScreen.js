@@ -22,7 +22,7 @@ const CartScreen = () => {
       */}
       <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
         <CartItems />
-        {/* buttons */}
+        {/* Total */}
         <Center>
           <HStack
             rounded={50}
@@ -35,10 +35,11 @@ const CartScreen = () => {
             h={45}
           >
             <Text>Total</Text>
-            <Button px={10} h={45} rounded={50} bg={Colors.main} _text={{ color: Colors.white, fontWeight: 'bold' }}>$365</Button>
+            <Button px={10} h={45} rounded={50} bg={Colors.main} _text={{ color: Colors.white, fontWeight: 'semibold' }} _pressed={{ bg: Colors.main }}>$365</Button>
           </HStack>
         </Center>
-
+        {/* CheckOut */}
+        <ButtonComponent bg={Colors.black} color={Colors.white} mt={10}>Check Out</ButtonComponent>
       </ScrollView>
     </Box>
   );
