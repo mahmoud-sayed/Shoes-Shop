@@ -6,12 +6,14 @@ import NotVerifyScreen from './src/Screens/NotVerifyScreen/NotVerifyScreen';
 import SingleProductScreen from './src/Screens/SingleProductScreen/SingleProductScreen';
 import CartScreen from './src/Screens/CartScreen/CartScreen';
 import ProfileScreen from './src/Screens/ProfileScreen/ProfileScreen';
+import ShoppingScreen from './src/Screens/ShoppingScreen/ShoppingScreen';
+import PaymentScreen from './src/Screens/PaymentScreen/PaymentScreen';
 
 export default function App() {
   return (
     <NativeBaseProvider>
 
-      <ProfileScreen />
+      <PaymentScreen />
 
     </NativeBaseProvider>
   );
