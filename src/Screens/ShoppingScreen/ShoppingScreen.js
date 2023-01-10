@@ -2,11 +2,14 @@ import React from 'react';
 import { View, Text, Box, Center, ScrollView, VStack, FormControl, Input } from 'native-base';
 import Colors from '../../GeneralImportantThings/colors';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 
 const ShoppingScreen = () => {
+
+  const navigation = useNavigation();
 
   const Inputs = [
     {
@@ -58,7 +61,9 @@ const ShoppingScreen = () => {
                   }} />
               </FormControl>
             ))}
-            <ButtonComponent color={Colors.white} bg={Colors.main}>CONTINUE</ButtonComponent>
+            <ButtonComponent color={Colors.white} bg={Colors.main}
+              onPress={() => navigation.navigate('CheckOut')}
+            >CONTINUE</ButtonComponent>
           </VStack>
         </ScrollView>
       </Box>

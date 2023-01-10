@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Center, Text } from 'native-base';
+import { Center, Pressable, Text } from 'native-base';
 import React from 'react';
 import Colors from '../GeneralImportantThings/colors';
 import { Entypo, AntDesign, FontAwesome, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -7,10 +7,15 @@ import HomeScreen from './../Screens/HomeScreen/HomeScreen';
 import { StyleSheet } from 'react-native';
 import ProfileScreen from './../Screens/ProfileScreen/ProfileScreen';
 import CartScreen from './../Screens/CartScreen/CartScreen';
+import StackNav from './StackNav';
 
 const Tab = createBottomTabNavigator();
 
-const CustomTab = ({ children, onPress }) => (<Text>hh</Text>);
+const CustomTab = ({ children, onPress }) => (
+  <Pressable onPress={onPress} _pressed={{ color: Colors.black }} bgColor={Colors.main} w={70} h={70} rounded='full' top={-30} shadow={3}>
+    {children}
+  </Pressable>
+);
 
 const BottomNav = () => {
   return (
@@ -26,7 +31,7 @@ const BottomNav = () => {
       {/* Home */}
       <Tab.Screen
         name='Main'
-        component={HomeScreen}
+        component={StackNav}
         options={{
           tabBarIcon: ({ focused }) => (
             <Center>
@@ -48,9 +53,9 @@ const BottomNav = () => {
           tabBarIcon: ({ focused }) => (
             <Center>
               {focused ? (
-                <FontAwesome5 name='shopping-basket' size={24} color={Colors.main} />
+                <FontAwesome5 name='shopping-basket' size={24} color={Colors.white} />
               ) :
-                <MaterialCommunityIcons name='shopping-outline' size={24} color={Colors.black} />
+                <MaterialCommunityIcons name='shopping-outline' size={24} color={Colors.white} />
               }
             </Center>
           )
@@ -80,7 +85,7 @@ const style = StyleSheet.create({
   tab: {
     elevation: 0,
     backGroundColor: Colors.white,
-    height: 60
+    height: 60,
   }
 });
 

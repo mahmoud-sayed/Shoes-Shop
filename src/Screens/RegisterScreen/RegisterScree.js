@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Colors from './../../GeneralImportantThings/colors';
 import { StyleSheet } from 'react-native';
 
-const RegisterScree = () => {
+const RegisterScree = ({ navigation }) => {
   const [sowPass, setShowPass] = useState(false);
 
 
@@ -65,7 +65,7 @@ const RegisterScree = () => {
               }
 
             />
-            <Button backgroundColor={Colors.main} mt="2" colorScheme="indigo">
+            <Button backgroundColor={Colors.main} mt="2" colorScheme="indigo" onPress={() => navigation.navigate('Bottom')}>
               Sign Up
             </Button>
             <HStack mt="6" justifyContent="center">
@@ -78,7 +78,7 @@ const RegisterScree = () => {
                 color: Colors.main,
                 fontWeight: "medium",
                 fontSize: "sm"
-              }} href="#">
+              }} href="#" onPress={() => navigation.navigate('Login')}>
                 Sign In
               </Link>
             </HStack>

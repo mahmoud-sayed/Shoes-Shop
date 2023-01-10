@@ -3,10 +3,12 @@ import { Box, FlatList, Flex, Heading, Image, Pressable, ScrollView, Text } from
 import Products from '../../data/products';
 import Colors from './../../GeneralImportantThings/colors';
 import RatingComponent from '../RatingComponent/RatingComponent';
+import { useNavigation } from '@react-navigation/native';
 
 
 const HomeProduct = () => {
   console.log({ Products });
+  const navigation = useNavigation();
   return (
     <ScrollView flex={1} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
       <Flex
@@ -26,6 +28,7 @@ const HomeProduct = () => {
             my={3}
             pb={2}
             overflow='hidden'
+            onPress={() => navigation.navigate('Single', p)}
           >
             <Image
               source={{ uri: p.image }}

@@ -7,6 +7,7 @@ import OrderTerm from '../../components/OrderInfo/OrderTerm';
 import PlaceOrderModel from '../../components/OrderInfo/PlaceOrderModel';
 
 const PlaceOrderScreen = () => {
+
   return (
     <Box bg={Colors.subGreen} flex={1} safeArea pt={6}>
       <Box>

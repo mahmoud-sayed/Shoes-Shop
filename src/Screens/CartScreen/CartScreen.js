@@ -4,10 +4,13 @@ import Colors from './../../GeneralImportantThings/colors';
 
 import CartItems from '../../components/CartItems/CartItems';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 const CartScreen = () => {
+
+  const navigation = useNavigation();
   return (
     <Box flex={1} safeAreaTop bg={Colors.deepGray}>
       {/*Header */}
@@ -39,8 +42,9 @@ const CartScreen = () => {
           </HStack>
         </Center>
         {/* CheckOut */}
-        <ButtonComponent bg={Colors.black} color={Colors.white} mt={10}>Check Out</ButtonComponent>
-      </ScrollView>
+        <ButtonComponent bg={Colors.black} color={Colors.white} mt={10}
+          onPress={() => navigation.navigate('Shipping')}>Check Out</ButtonComponent>
+      </ScrollView >
     </Box>
   );
 };

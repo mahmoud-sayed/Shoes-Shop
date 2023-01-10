@@ -3,10 +3,11 @@ import { View, Text, Box, Center, ScrollView, VStack, FormControl, Input, HStack
 import Colors from '../../GeneralImportantThings/colors';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
 const PaymentScreen = () => {
-
+  const navigation = useNavigation();
   const paymentMethod = [
     {
       image: require('./../../../assets/paypal.png'),
@@ -60,7 +61,9 @@ const PaymentScreen = () => {
 
               </HStack>
             ))}
-            <ButtonComponent color={Colors.white} bg={Colors.main}>CONTINUE</ButtonComponent>
+            <ButtonComponent color={Colors.white} bg={Colors.main}
+              onPress={() => navigation.navigate('PlaceOrder')}
+            >CONTINUE</ButtonComponent>
             <Text italic textAlign='center'>Payment Method IS <Text bold>Paypal</Text> by default</Text>
           </VStack>
         </ScrollView>

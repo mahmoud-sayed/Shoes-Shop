@@ -8,7 +8,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import Colors from './../../GeneralImportantThings/colors';
 import { StyleSheet } from 'react-native';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [sowPass, setShowPass] = useState(false);
 
 
@@ -57,7 +57,7 @@ const LoginScreen = () => {
               Forget Password?
             </Link>
 
-            <Button backgroundColor={Colors.main} mt="2" colorScheme="indigo">
+            <Button backgroundColor={Colors.main} mt="2" colorScheme="indigo" onPress={() => navigation.navigate('Bottom')}>
               Sign in
             </Button>
             <HStack mt="6" justifyContent="center">
@@ -70,7 +70,7 @@ const LoginScreen = () => {
                 color: Colors.main,
                 fontWeight: "medium",
                 fontSize: "sm"
-              }} href="#">
+              }} href="#" onPress={() => navigation.navigate('Register')}>
                 Sign Up
               </Link>
             </HStack>

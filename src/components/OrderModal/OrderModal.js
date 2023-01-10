@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Center, HStack, Modal, Text, VStack, Flex, Button, Pressable, Image } from 'native-base';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 import Colors from './../../GeneralImportantThings/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const OrderModel = () => {
   const [showModel, setShowModel] = useState(false);
-
+  const navigation = useNavigation();
   const OrderInfo = [
     {
       title: 'products',
@@ -69,7 +70,7 @@ const OrderModel = () => {
                 fontWeight: 'bold'
               }}
               bg={Colors.black}
-              onPress={() => setShowModel(!showModel)}
+              onPress={() => { setShowModel(!showModel); navigation.navigate('Home'); }}
               _pressed={{ bg: Colors.black }}
             >
               Place An Order
